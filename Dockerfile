@@ -8,7 +8,7 @@ ENV c9_password=undefined
 SHELL ["/bin/bash", "-c"]
 
 RUN apt-get update
-RUN apt-get update -y
+RUN apt-get upgrade -y
 RUN apt-get install -y supervisor nano curl openssh-server openssh-client git tar g++ libssl-dev libxml2-dev nodejs python sudo
 
 RUN adduser --disabled-password --gecos "" c9
