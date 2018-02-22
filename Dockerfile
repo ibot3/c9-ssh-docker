@@ -12,9 +12,9 @@ RUN apt-get install -y nano curl openssh-server openssh-client git tar g++ libss
 
 RUN adduser --disabled-password --gecos "" c9
 
-USER c9
-
 EXPOSE 22
 
 COPY ./entrypoint.sh /entrypoint.sh
 CMD ["/bin/bash", "/entrypoint.sh"]
+
+USER c9
