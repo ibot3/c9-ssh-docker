@@ -16,5 +16,3 @@ EXPOSE 22
 
 COPY ./entrypoint.sh /entrypoint.sh
 CMD ["/bin/bash", "/entrypoint.sh"]
-
-USER c9
