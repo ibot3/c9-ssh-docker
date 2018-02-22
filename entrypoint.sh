@@ -5,9 +5,9 @@ echo c9:"$c9_password" | /usr/sbin/chpasswd
 
 cd /home/c9/
 mkdir ".ssh"
-mkdir "workspace"
+mkdir workspace
 
-cd cd /home/c9/.ssh
+cd /home/c9/.ssh
 echo "$c9_sshkey" > authorized_keys
 
 cd /home/c9/
