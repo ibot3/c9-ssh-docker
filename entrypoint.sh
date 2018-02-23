@@ -13,3 +13,5 @@ cd /home/c9/
 chown -R c9:c9 *
 
 service ssh start
+
+/bin/bash
