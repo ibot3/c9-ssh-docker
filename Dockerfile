@@ -9,7 +9,7 @@ SHELL ["/bin/bash", "-c"]
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y nano curl openssh-server openssh-client git tar g++ libssl-dev libxml2-dev nodejs python sudo
+RUN apt-get install -y nano curl openssh-server openssh-client git tar g++ libssl-dev libxml2-dev npm python sudo
 
 RUN adduser --disabled-password --gecos "" c9
 
