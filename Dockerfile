@@ -19,7 +19,7 @@ RUN adduser --disabled-password --gecos "" c9
 USER c9
 ENV HOME /home/c9
 
-RUN wget wget http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -O php-cs-fixer -O ~/php-cs-fixer && mkdir -p ~/bin; mv ~/php-cs-fixer ~/bin && chmod a+x ~/bin/php-cs-fixer
+RUN curl -L http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -o ~/php-cs-fixer && mkdir -p ~/bin; mv ~/php-cs-fixer ~/bin && chmod a+x ~/bin/php-cs-fixer
 RUN cd ~ && curl -L https://raw.githubusercontent.com/c9/install/master/install.sh | bash
 
 USER root
