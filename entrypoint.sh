@@ -14,4 +14,9 @@ chown -R c9:c9 *
 
 service ssh start
 
+echo "mysql-server mysql-server/root_password password $c9_password" | debconf-set-selections
+echo "mysql-server mysql-server/root_password_again password $c9_password" | debconf-set-selections
+sudo apt-get -y install mysql-server
+service mysql start
+
 /bin/bash
