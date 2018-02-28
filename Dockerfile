@@ -9,7 +9,7 @@ SHELL ["/bin/bash", "-c"]
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y nano curl openssh-server openssh-client git tar g++ libssl-dev libxml2-dev nodejs npm python sudo docker software-properties-common python-software-properties
+RUN apt-get install -y nano wget curl openssh-server openssh-client git tar g++ libssl-dev libxml2-dev nodejs npm python sudo docker software-properties-common python-software-properties
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php && apt-get update && apt-get install -y --allow-unauthenticated php7.2 php-pear php7.2-curl php7.2-dev php7.2-gd php7.2-mbstring php7.2-zip php7.2-mysql php7.2-xml
 RUN sed -i 's/%sudo\s.*/%sudo ALL=NOPASSWD:ALL/' /etc/sudoers
@@ -19,6 +19,7 @@ RUN adduser --disabled-password --gecos "" c9
 USER c9
 ENV HOME /home/c9
 
+RUN wget wget http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -O php-cs-fixer -O ~/php-cs-fixer && mkdir -p ~/bin; mv ~/php-cs-fixer ~/bin && chmod a+x ~/bin/php-cs-fixer
 RUN cd ~ && curl -L https://raw.githubusercontent.com/c9/install/master/install.sh | bash
 
 USER root
