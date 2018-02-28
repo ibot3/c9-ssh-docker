@@ -16,7 +16,10 @@ RUN sed -i 's/%sudo\s.*/%sudo ALL=NOPASSWD:ALL/' /etc/sudoers
 
 RUN adduser --disabled-password --gecos "" c9
 
-RUN su c9 && cd ~ && curl -L https://raw.githubusercontent.com/c9/install/master/install.sh | bash
+USER c9
+ENV HOME /home/c9
+
+RUN cd ~ && curl -L https://raw.githubusercontent.com/c9/install/master/install.sh | bash
 
 USER root
 
