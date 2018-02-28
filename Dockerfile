@@ -19,7 +19,7 @@ RUN adduser --disabled-password --gecos "" c9
 
 USER c9
 
-sudo curl -L https://raw.githubusercontent.com/c9/install/master/install.sh | bash
+RUN sudo curl -L https://raw.githubusercontent.com/c9/install/master/install.sh | bash
 
 USER root
 
