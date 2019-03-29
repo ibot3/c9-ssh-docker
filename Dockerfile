@@ -18,6 +18,8 @@ RUN mkdir -p /home/c9/logs/ && php -r "ini_set('error_reporting', E_ALL); ini_se
 
 RUN adduser --disabled-password --gecos "" c9
 
+RUN chown -R c9:c9 /home/c9
+
 USER c9
 ENV HOME /home/c9
 
