@@ -10,7 +10,7 @@ SHELL ["/bin/bash", "-c"]
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get update
-RUN apt-get install -y nano wget curl zip openssh-server openssh-client git tar g++ libssl-dev libxml2-dev nodejs npm python dialog sudo docker software-properties-common python-software-properties
+RUN apt-get install -y nano wget curl zip openssh-server openssh-client git tar g++ libssl-dev libxml2-dev nodejs npm python dialog sudo docker software-properties-common python-software-properties locales-all
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php && apt-get update && apt-get install -y --allow-unauthenticated php7.2 php-pear php7.2-curl php7.2-dev php7.2-gd php7.2-mbstring php7.2-zip php7.2-mysql php7.2-xml php7.2-gettext php7.2-bcmath
 RUN sed -i 's/%sudo\s.*/%sudo ALL=NOPASSWD:ALL/' /etc/sudoers
